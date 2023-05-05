@@ -57,7 +57,7 @@ function SavingThrows() {
     </Stack>;
 }
 
-function getSkills() {
+function CharacterSkills() {
     return <Stack aria-labelledby="skills">
         <TextInput size="xs" label="Acrobatics"/>
         <TextInput size="xs" label="Animal Handling"/>
@@ -89,11 +89,11 @@ function App() {
             <Grid>
                 <Grid.Col span={4}>
                     <Group noWrap>
-                        <CharacterAttributes/>
+                        <CharacterAttributes />
                         <Stack>
                             <TextInput label="Proficiency Bonus"/>
-                            <SavingThrows/>
-                            {getSkills()}
+                            <SavingThrows />
+                            <CharacterSkills />
                         </Stack>
                     </Group>
                 </Grid.Col>
