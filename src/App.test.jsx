@@ -43,4 +43,28 @@ describe('App', () => {
         expect(saveScreen.getByLabelText('Wisdom')).toBeInTheDocument();
         expect(saveScreen.getByLabelText('Charisma')).toBeInTheDocument();
     });
+
+    it('renders skills', () => {
+        render(<App />);
+        const skills = screen.getByLabelText('Skills');
+        const skillScreen = within(skills);
+        expect(skillScreen.getByLabelText('Acrobatics')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Animal Handling')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Arcana')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Athletics')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Deception')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('History')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Insight')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Intimidation')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Investigation')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Medicine')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Nature')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Perception')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Performance')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Persuasion')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Religion')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Sleight of Hand')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Stealth')).toBeInTheDocument();
+        expect(skillScreen.getByLabelText('Survival')).toBeInTheDocument();
+    });
 });
