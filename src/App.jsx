@@ -3,9 +3,12 @@ import { Grid, Group, TextInput } from "@mantine/core";
 function App() {
   return (
     <>
-        <Group>
-            <TextInput label="Character Name" />
-            <Grid>
+    <Grid>
+        <Grid.Col span={6}>
+            <TextInput styles={{  wrapper: { flexGrow: '1' } }} label="Character Name" />
+        </Grid.Col>
+        <Grid.Col span={6}>
+            <Grid gutter="xs">
                 <Grid.Col span={2}>
                     <TextInput label="Class" />
                 </Grid.Col>
@@ -28,7 +31,8 @@ function App() {
                     <TextInput label="Experience Points" />
                 </Grid.Col>
             </Grid>
-        </Group>
+        </Grid.Col>
+    </Grid>
     </>
   )
 }
