@@ -4,6 +4,7 @@ function App() {
   return (
     <>
         <TextInput label="Character Name" />
+        <TextInput label="Class" />
     </>
   )
 }

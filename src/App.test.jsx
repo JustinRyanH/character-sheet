@@ -6,5 +6,6 @@ describe('App', () => {
     it('renders the app', () => {
         render(<App />);
         expect(screen.getByLabelText('Character Name')).toBeInTheDocument();
+        expect(screen.getByLabelText('Class')).toBeInTheDocument();
     });
 });
