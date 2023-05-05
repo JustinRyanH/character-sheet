@@ -117,6 +117,21 @@ function CharacterCombat() {
     </Stack>;
 }
 
+function CharacterAttacks() {
+    return <Stack aria-labelledby="attacks-and-spells">
+        <Table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Atk Bonus</th>
+                <th>Damage/Type</th>
+            </tr>
+            </thead>
+        </Table>
+        <Header id="attacks-and-spells" level={2}>Attacks and Spellcasting</Header>
+    </Stack>;
+}
+
 function App() {
     return (
         <>
@@ -134,22 +149,10 @@ function App() {
                         </Group>
                     </Grid.Col>
                     <Grid.Col span={4}>
-                        <CharacterCombat/>
-                        <Stack aria-labelledby="attacks-and-spells">
-                            <Table>
-                                <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Atk Bonus</th>
-                                    <th>Damage/Type</th>
-                                </tr>
-                                </thead>
-                            </Table>
-                            <Header id="attacks-and-spells" level={2}>Attacks and Spellcasting</Header>
-                        </Stack>
+                        <CharacterCombat />
+                        <CharacterAttacks />
                     </Grid.Col>
                     <Grid.Col span={4}></Grid.Col>
-
                 </Grid>
             </Stack>
         </>
