@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import App from './App';
 
 describe('App', () => {
@@ -17,11 +17,30 @@ describe('App', () => {
 
     it('renders Attributes', () => {
         render(<App />);
-        expect(screen.getByLabelText('Strength')).toBeInTheDocument();
-        expect(screen.getByLabelText('Dexterity')).toBeInTheDocument();
-        expect(screen.getByLabelText('Constitution')).toBeInTheDocument();
-        expect(screen.getByLabelText('Intelligence')).toBeInTheDocument();
-        expect(screen.getByLabelText('Wisdom')).toBeInTheDocument();
-        expect(screen.getByLabelText('Charisma')).toBeInTheDocument();
+        const attributes = screen.getByLabelText('Attributes');
+        const attrScreen = within(attributes);
+        expect(attrScreen.getByLabelText('Strength')).toBeInTheDocument();
+        expect(attrScreen.getByLabelText('Dexterity')).toBeInTheDocument();
+        expect(attrScreen.getByLabelText('Constitution')).toBeInTheDocument();
+        expect(attrScreen.getByLabelText('Intelligence')).toBeInTheDocument();
+        expect(attrScreen.getByLabelText('Wisdom')).toBeInTheDocument();
+        expect(attrScreen.getByLabelText('Charisma')).toBeInTheDocument();
+    });
+
+    it('renders proficiency bonus', () => {
+        render(<App />);
+        expect(screen.getByLabelText('Proficiency Bonus')).toBeInTheDocument();
+    });
+
+    it('renders saving throws', () => {
+        render(<App />);
+        const savingThrows = screen.getByLabelText('Saving Throws');
+        const saveScreen = within(savingThrows);
+        expect(saveScreen.getByLabelText('Strength')).toBeInTheDocument();
+        expect(saveScreen.getByLabelText('Dexterity')).toBeInTheDocument();
+        expect(saveScreen.getByLabelText('Constitution')).toBeInTheDocument();
+        expect(saveScreen.getByLabelText('Intelligence')).toBeInTheDocument();
+        expect(saveScreen.getByLabelText('Wisdom')).toBeInTheDocument();
+        expect(saveScreen.getByLabelText('Charisma')).toBeInTheDocument();
     });
 });

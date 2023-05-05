@@ -1,6 +1,6 @@
-import { Grid, Group, Stack, TextInput } from "@mantine/core";
+import { Grid, Group, Header, Stack, TextInput } from "@mantine/core";
 
-function Header() {
+function CharacterHeader() {
     return <Grid>
         <Grid.Col span={6}>
             <TextInput styles={{ wrapper: { flexGrow: '1' } }} label="Character Name"/>
@@ -37,18 +37,30 @@ function App() {
   return (
     <>
         <Stack>
-            <Header />
+            <CharacterHeader />
             <Grid>
                 <Grid.Col span={4}>
-                    <Group>
-                        <Stack>
+                    <Group noWrap>
+                        <Stack aria-labelledby="attributes">
                             <TextInput label="Strength" />
                             <TextInput label="Dexterity" />
                             <TextInput label="Constitution" />
                             <TextInput label="Intelligence" />
                             <TextInput label="Wisdom" />
                             <TextInput label="Charisma" />
-
+                            <Header level={2} id="attributes">Attributes</Header>
+                        </Stack>
+                        <Stack>
+                            <TextInput label="Proficiency Bonus" />
+                            <Stack aria-labelledby="saving-throws">
+                                <TextInput size="xs" label="Strength" />
+                                <TextInput size="xs" label="Dexterity" />
+                                <TextInput size="xs" label="Constitution" />
+                                <TextInput size="xs" label="Intelligence" />
+                                <TextInput size="xs" label="Wisdom" />
+                                <TextInput size="xs" label="Charisma" />
+                                <Header level={2} id="saving-throws">Saving Throws</Header>
+                            </Stack>
                         </Stack>
                     </Group>
                 </Grid.Col>
