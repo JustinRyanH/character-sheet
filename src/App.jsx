@@ -86,11 +86,26 @@ function App() {
                     </Group>
                 </Grid.Col>
                 <Grid.Col span={4}>
-                    <Stack aria-labelledby="character-health">
-                        <TextInput label="Hit Point Maximum" />
-                        <TextInput label="Current Hit Points" />
-                        <TextInput label="Temporary Hit Points" />
-                        <Header id="character-health" level={2}>Character Health</Header>
+                    <Stack aria-labelledby="combat-stats">
+                        <Group position="apart" noWrap>
+                            <TextInput label="Armor Class" />
+                            <TextInput label="Initiative" />
+                            <TextInput label="Speed" />
+                        </Group>
+                        <Stack >
+                            <TextInput label="Hit Point Maximum" />
+                            <TextInput label="Current Hit Points" />
+                            <TextInput label="Temporary Hit Points" />
+                        </Stack>
+                        <Group>
+                            <div aria-labelledby="hit-dice">
+                                <Header id="hit-dice" level={3}>Hit Dice</Header>
+                            </div>
+                            <div aria-labelledby="death-saves">
+                                <Header id="death-saves" level={3}>Death Saves</Header>
+                            </div>
+                        </Group>
+                        <Header id="combat-stats" level={2}>Combat Stats</Header>
                     </Stack>
                 </Grid.Col>
                 <Grid.Col span={4}></Grid.Col>

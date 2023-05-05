@@ -70,10 +70,15 @@ describe('App', () => {
 
     it('renders health', () => {
         render(<App />);
-        const health = screen.getByLabelText('Character Health');
-        const healthScreen = within(health);
-        expect(healthScreen.getByLabelText('Hit Point Maximum')).toBeInTheDocument();
-        expect(healthScreen.getByLabelText('Current Hit Points')).toBeInTheDocument();
-        expect(healthScreen.getByLabelText('Temporary Hit Points')).toBeInTheDocument();
+        const combat = screen.getByLabelText('Combat Stats');
+        const combatScreen = within(combat);
+        expect(combatScreen.getByLabelText('Armor Class')).toBeInTheDocument();
+        expect(combatScreen.getByLabelText('Initiative')).toBeInTheDocument();
+        expect(combatScreen.getByLabelText('Speed')).toBeInTheDocument();
+        expect(combatScreen.getByLabelText('Hit Point Maximum')).toBeInTheDocument();
+        expect(combatScreen.getByLabelText('Current Hit Points')).toBeInTheDocument();
+        expect(combatScreen.getByLabelText('Temporary Hit Points')).toBeInTheDocument();
+        expect(combatScreen.getByLabelText('Hit Dice')).toBeInTheDocument();
+        expect(combatScreen.getByLabelText('Death Saves')).toBeInTheDocument();
     });
 });
