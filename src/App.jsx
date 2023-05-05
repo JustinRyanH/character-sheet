@@ -33,7 +33,7 @@ function CharacterHeader() {
     </Grid>;
 }
 
-function getStack() {
+function CharacterAttributes() {
     return <Stack aria-labelledby="attributes">
         <TextInput label="Strength"/>
         <TextInput label="Dexterity"/>
@@ -53,7 +53,7 @@ function App() {
             <Grid>
                 <Grid.Col span={4}>
                     <Group noWrap>
-                        {getStack()}
+                        <CharacterAttributes />
                         <Stack>
                             <TextInput label="Proficiency Bonus"/>
                             <Stack aria-labelledby="saving-throws">
