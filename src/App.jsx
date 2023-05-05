@@ -1,10 +1,12 @@
 import { Grid, Group, Stack, TextInput } from "@mantine/core";
-import { CharacterHeader } from "./character/CharacterHeader.jsx";
-import { CharacterAttributes } from "./character/CharacterAttributes.jsx";
-import { SavingThrows } from "./SavingThrows.jsx";
-import { CharacterSkills } from "./character/CharacterSkills.jsx";
-import { CharacterCombat } from "./character/CharacterCombat.jsx";
-import { CharacterAttacks } from "./character/CharacterAttacks.jsx";
+import {
+    CharacterAttacks,
+    CharacterAttributes,
+    CharacterCombat,
+    CharacterHeader,
+    CharacterSkills,
+    SavingThrows
+} from "./character";
 
 function App() {
     return (
