@@ -45,7 +45,7 @@ function CharacterAttributes() {
     </Stack>;
 }
 
-function getSavingThrows() {
+function SavingThrows() {
     return <Stack aria-labelledby="saving-throws">
         <TextInput size="xs" label="Strength"/>
         <TextInput size="xs" label="Dexterity"/>
@@ -68,7 +68,7 @@ function App() {
                         <CharacterAttributes/>
                         <Stack>
                             <TextInput label="Proficiency Bonus"/>
-                            {getSavingThrows()}
+                            <SavingThrows />
                             <Stack aria-labelledby="skills">
                                 <TextInput size="xs" label="Acrobatics"/>
                                 <TextInput size="xs" label="Animal Handling"/>
