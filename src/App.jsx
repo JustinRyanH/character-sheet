@@ -1,5 +1,4 @@
 import { Grid, Group, Header, Stack, Table, TextInput } from "@mantine/core";
-import { Component } from "react";
 
 function CharacterHeader() {
     return <Grid>
@@ -118,45 +117,43 @@ function CharacterCombat() {
     </Stack>;
 }
 
-class App extends Component {
-    render() {
-        return (
-            <>
-                <Stack>
-                    <CharacterHeader/>
-                    <Grid>
-                        <Grid.Col span={4}>
-                            <Group noWrap>
-                                <CharacterAttributes/>
-                                <Stack>
-                                    <TextInput label="Proficiency Bonus"/>
-                                    <SavingThrows/>
-                                    <CharacterSkills/>
-                                </Stack>
-                            </Group>
-                        </Grid.Col>
-                        <Grid.Col span={4}>
-                            <CharacterCombat />
-                            <Stack aria-labelledby="attacks-and-spells">
-                                <Table>
-                                    <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Atk Bonus</th>
-                                        <th>Damage/Type</th>
-                                    </tr>
-                                    </thead>
-                                </Table>
-                                <Header id="attacks-and-spells" level={2}>Attacks and Spellcasting</Header>
+function App() {
+    return (
+        <>
+            <Stack>
+                <CharacterHeader/>
+                <Grid>
+                    <Grid.Col span={4}>
+                        <Group noWrap>
+                            <CharacterAttributes/>
+                            <Stack>
+                                <TextInput label="Proficiency Bonus"/>
+                                <SavingThrows/>
+                                <CharacterSkills/>
                             </Stack>
-                        </Grid.Col>
-                        <Grid.Col span={4}></Grid.Col>
+                        </Group>
+                    </Grid.Col>
+                    <Grid.Col span={4}>
+                        <CharacterCombat/>
+                        <Stack aria-labelledby="attacks-and-spells">
+                            <Table>
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Atk Bonus</th>
+                                    <th>Damage/Type</th>
+                                </tr>
+                                </thead>
+                            </Table>
+                            <Header id="attacks-and-spells" level={2}>Attacks and Spellcasting</Header>
+                        </Stack>
+                    </Grid.Col>
+                    <Grid.Col span={4}></Grid.Col>
 
-                    </Grid>
-                </Stack>
-            </>
-        )
-    }
+                </Grid>
+            </Stack>
+        </>
+    )
 }
 
 export default App
