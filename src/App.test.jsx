@@ -81,4 +81,13 @@ describe('App', () => {
         expect(combatScreen.getByLabelText('Hit Dice')).toBeInTheDocument();
         expect(combatScreen.getByLabelText('Death Saves')).toBeInTheDocument();
     });
+
+    it('renders attacks and spells', () => {
+        render(<App />);
+        const attacks = screen.getByLabelText('Attacks and Spellcasting');
+        const attacksScreen = within(attacks);
+        expect(attacksScreen.getByText('Name')).toBeInTheDocument();
+        expect(attacksScreen.getByText('Atk Bonus')).toBeInTheDocument();
+        expect(attacksScreen.getByText('Damage/Type')).toBeInTheDocument();
+    });
 });

@@ -1,4 +1,4 @@
-import { Grid, Group, Header, Stack, TextInput } from "@mantine/core";
+import { Grid, Group, Header, Stack, Table, TextInput } from "@mantine/core";
 
 function CharacterHeader() {
     return <Grid>
@@ -106,6 +106,18 @@ function App() {
                             </div>
                         </Group>
                         <Header id="combat-stats" level={2}>Combat Stats</Header>
+                    </Stack>
+                    <Stack aria-labelledby="attacks-and-spells">
+                        <Table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Atk Bonus</th>
+                                    <th>Damage/Type</th>
+                                </tr>
+                            </thead>
+                        </Table>
+                        <Header id="attacks-and-spells" level={2}>Attacks and Spellcasting</Header>
                     </Stack>
                 </Grid.Col>
                 <Grid.Col span={4}></Grid.Col>
