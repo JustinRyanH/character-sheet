@@ -1,4 +1,4 @@
-import { Grid, Group, TextInput } from "@mantine/core";
+import { Grid, TextInput } from "@mantine/core";
 
 function App() {
   return (
