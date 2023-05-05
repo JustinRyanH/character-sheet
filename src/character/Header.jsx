@@ -1,6 +1,6 @@
 import { Grid, TextInput } from "@mantine/core";
 
-export function CharacterHeader() {
+export function Header() {
     return <Grid>
         <Grid.Col span={6}>
             <TextInput styles={{ wrapper: { flexGrow: '1' } }} label="Character Name"/>

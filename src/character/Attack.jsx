@@ -1,6 +1,6 @@
 import { Header, Stack, Table } from "@mantine/core";
 
-export function CharacterAttacks() {
+export function Attack() {
     return <Stack aria-labelledby="attacks-and-spells">
         <Table>
             <thead>

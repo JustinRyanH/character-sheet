@@ -1,6 +1,6 @@
 import { Header, Stack, TextInput } from "@mantine/core";
 
-export function CharacterSkills() {
+export function Skills() {
     return <Stack aria-labelledby="skills">
         <TextInput size="xs" label="Acrobatics"/>
         <TextInput size="xs" label="Animal Handling"/>

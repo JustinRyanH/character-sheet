@@ -1,6 +1,6 @@
-export { CharacterHeader } from "./CharacterHeader.jsx";
-export { CharacterAttributes } from "./CharacterAttributes.jsx";
+export { Header } from "./Header.jsx";
+export { Attributes } from "./Attributes.jsx";
 export { SavingThrows } from "./SavingThrows.jsx";
-export { CharacterSkills } from "./CharacterSkills.jsx";
-export { CharacterCombat } from "./CharacterCombat.jsx";
-export { CharacterAttacks } from "./CharacterAttacks.jsx";
+export { Skills } from "./Skills.jsx";
+export { Combat } from "./Combat.jsx";
+export { Attack } from "./Attack.jsx";

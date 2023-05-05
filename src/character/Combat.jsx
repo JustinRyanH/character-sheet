@@ -3,7 +3,7 @@ import { GeneralCombat } from "./GeneralCombat.jsx";
 import { CombatHealth } from "./CombatHealth.jsx";
 import { CombatDeath } from "./CombatDeath.jsx";
 
-export function CharacterCombat() {
+export function Combat() {
     return <Stack aria-labelledby="combat-stats">
         <GeneralCombat/>
         <CombatHealth/>
