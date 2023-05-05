@@ -85,7 +85,14 @@ function App() {
                         </Stack>
                     </Group>
                 </Grid.Col>
-                <Grid.Col span={4}></Grid.Col>
+                <Grid.Col span={4}>
+                    <Stack aria-labelledby="character-health">
+                        <TextInput label="Hit Point Maximum" />
+                        <TextInput label="Current Hit Points" />
+                        <TextInput label="Temporary Hit Points" />
+                        <Header id="character-health" level={2}>Character Health</Header>
+                    </Stack>
+                </Grid.Col>
                 <Grid.Col span={4}></Grid.Col>
 
             </Grid>

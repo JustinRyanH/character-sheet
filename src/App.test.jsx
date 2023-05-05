@@ -67,4 +67,13 @@ describe('App', () => {
         expect(skillScreen.getByLabelText('Stealth')).toBeInTheDocument();
         expect(skillScreen.getByLabelText('Survival')).toBeInTheDocument();
     });
+
+    it('renders health', () => {
+        render(<App />);
+        const health = screen.getByLabelText('Character Health');
+        const healthScreen = within(health);
+        expect(healthScreen.getByLabelText('Hit Point Maximum')).toBeInTheDocument();
+        expect(healthScreen.getByLabelText('Current Hit Points')).toBeInTheDocument();
+        expect(healthScreen.getByLabelText('Temporary Hit Points')).toBeInTheDocument();
+    });
 });
