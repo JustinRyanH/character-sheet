@@ -81,6 +81,33 @@ function CharacterSkills() {
     </Stack>;
 }
 
+function GeneralCombat() {
+    return <Group position="apart" noWrap>
+        <TextInput label="Armor Class"/>
+        <TextInput label="Initiative"/>
+        <TextInput label="Speed"/>
+    </Group>;
+}
+
+function CombatHealth() {
+    return <Stack>
+        <TextInput label="Hit Point Maximum"/>
+        <TextInput label="Current Hit Points"/>
+        <TextInput label="Temporary Hit Points"/>
+    </Stack>;
+}
+
+function CombatDeath() {
+    return <Group>
+        <div aria-labelledby="hit-dice">
+            <Header id="hit-dice" level={3}>Hit Dice</Header>
+        </div>
+        <div aria-labelledby="death-saves">
+            <Header id="death-saves" level={3}>Death Saves</Header>
+        </div>
+    </Group>;
+}
+
 function App() {
   return (
     <>
@@ -89,34 +116,19 @@ function App() {
             <Grid>
                 <Grid.Col span={4}>
                     <Group noWrap>
-                        <CharacterAttributes />
+                        <CharacterAttributes/>
                         <Stack>
                             <TextInput label="Proficiency Bonus"/>
-                            <SavingThrows />
-                            <CharacterSkills />
+                            <SavingThrows/>
+                            <CharacterSkills/>
                         </Stack>
                     </Group>
                 </Grid.Col>
                 <Grid.Col span={4}>
                     <Stack aria-labelledby="combat-stats">
-                        <Group position="apart" noWrap>
-                            <TextInput label="Armor Class"/>
-                            <TextInput label="Initiative"/>
-                            <TextInput label="Speed"/>
-                        </Group>
-                        <Stack>
-                            <TextInput label="Hit Point Maximum"/>
-                            <TextInput label="Current Hit Points"/>
-                            <TextInput label="Temporary Hit Points"/>
-                        </Stack>
-                        <Group>
-                            <div aria-labelledby="hit-dice">
-                                <Header id="hit-dice" level={3}>Hit Dice</Header>
-                            </div>
-                            <div aria-labelledby="death-saves">
-                                <Header id="death-saves" level={3}>Death Saves</Header>
-                            </div>
-                        </Group>
+                        <GeneralCombat/>
+                        <CombatHealth/>
+                        <CombatDeath />
                         <Header id="combat-stats" level={2}>Combat Stats</Header>
                     </Stack>
                     <Stack aria-labelledby="attacks-and-spells">
