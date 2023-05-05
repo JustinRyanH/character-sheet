@@ -1,4 +1,4 @@
-import { Grid, TextInput } from "@mantine/core";
+import { Grid, Group, Stack, TextInput } from "@mantine/core";
 
 function Header() {
     return <Grid>
@@ -36,7 +36,27 @@ function Header() {
 function App() {
   return (
     <>
-        <Header />
+        <Stack>
+            <Header />
+            <Grid>
+                <Grid.Col span={4}>
+                    <Group>
+                        <Stack>
+                            <TextInput label="Strength" />
+                            <TextInput label="Dexterity" />
+                            <TextInput label="Constitution" />
+                            <TextInput label="Intelligence" />
+                            <TextInput label="Wisdom" />
+                            <TextInput label="Charisma" />
+
+                        </Stack>
+                    </Group>
+                </Grid.Col>
+                <Grid.Col span={4}></Grid.Col>
+                <Grid.Col span={4}></Grid.Col>
+
+            </Grid>
+        </Stack>
     </>
   )
 }
