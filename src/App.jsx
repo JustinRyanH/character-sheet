@@ -45,6 +45,18 @@ function CharacterAttributes() {
     </Stack>;
 }
 
+function getSavingThrows() {
+    return <Stack aria-labelledby="saving-throws">
+        <TextInput size="xs" label="Strength"/>
+        <TextInput size="xs" label="Dexterity"/>
+        <TextInput size="xs" label="Constitution"/>
+        <TextInput size="xs" label="Intelligence"/>
+        <TextInput size="xs" label="Wisdom"/>
+        <TextInput size="xs" label="Charisma"/>
+        <Header level={2} id="saving-throws">Saving Throws</Header>
+    </Stack>;
+}
+
 function App() {
   return (
     <>
@@ -53,18 +65,10 @@ function App() {
             <Grid>
                 <Grid.Col span={4}>
                     <Group noWrap>
-                        <CharacterAttributes />
+                        <CharacterAttributes/>
                         <Stack>
                             <TextInput label="Proficiency Bonus"/>
-                            <Stack aria-labelledby="saving-throws">
-                                <TextInput size="xs" label="Strength"/>
-                                <TextInput size="xs" label="Dexterity"/>
-                                <TextInput size="xs" label="Constitution"/>
-                                <TextInput size="xs" label="Intelligence"/>
-                                <TextInput size="xs" label="Wisdom"/>
-                                <TextInput size="xs" label="Charisma"/>
-                                <Header level={2} id="saving-throws">Saving Throws</Header>
-                            </Stack>
+                            {getSavingThrows()}
                             <Stack aria-labelledby="skills">
                                 <TextInput size="xs" label="Acrobatics"/>
                                 <TextInput size="xs" label="Animal Handling"/>
