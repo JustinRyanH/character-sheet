@@ -8,10 +8,12 @@ import { Group, NumberInput, Stack, Text } from "@mantine/core";
 // eslint-disable-next-line react/prop-types
 export function Attribute({ label, value }) {
     const modifier = Math.floor((value / 2) - 5);
+    const sign = Math.sign(modifier);
+    const displaySign = sign === 1 ? '+' : '-';
     return <Stack>
         <NumberInput label={label} defaultValue={value} />
         <Group position="center">
-            <Text aria-label={`${label} Modifier`}>+{modifier}</Text>
+            <Text aria-label={`${label} Modifier`}>{displaySign}{Math.abs(modifier)}</Text>
         </Group>
     </Stack>
 }

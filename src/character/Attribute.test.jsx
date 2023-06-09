@@ -15,4 +15,11 @@ describe('Attribute', () => {
         expect(screen.getByLabelText('Strength')).toHaveValue('12');
         expect(screen.getByLabelText('Strength Modifier')).toHaveTextContent('+1');
     });
+
+    it('displays the negative when value is less than 0', () => {
+        render(<Attribute label="Strength" value={8} />);
+
+        expect(screen.getByLabelText('Strength')).toHaveValue('8');
+        expect(screen.getByLabelText('Strength Modifier')).toHaveTextContent('-1');
+    });
 });
