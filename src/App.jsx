@@ -11,7 +11,7 @@ import {
 function App() {
     return (
         <>
-            <Stack>
+            <Stack p="2rem">
                 <CharacterHeader />
                 <Grid>
                     <Grid.Col span={4}>
