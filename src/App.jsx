@@ -1,3 +1,4 @@
+import React from 'react';
 import { Grid, Group, Stack, TextInput } from "@mantine/core";
 import {
     Attack,
@@ -9,6 +10,9 @@ import {
 } from "./character";
 
 function App() {
+    const [attributes, setAttributes] = React.useState({
+        strength: 10,
+    });
     return (
         <>
             <Stack p="2rem">
@@ -16,11 +20,11 @@ function App() {
                 <Grid>
                     <Grid.Col span={4}>
                         <Group noWrap>
-                            <Attributes/>
+                            <Attributes attributes={attributes} setAttributes={setAttributes} />
                             <Stack>
                                 <TextInput label="Proficiency Bonus"/>
                                 <SavingThrows/>
-                                <Skills/>
+                                <Skills attributes={attributes} />
                             </Stack>
                         </Group>
                     </Grid.Col>
