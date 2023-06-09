@@ -9,7 +9,8 @@ import { Group, NumberInput, Stack, Text } from "@mantine/core";
 export function Attribute({ label, value }) {
     const modifier = Math.floor((value / 2) - 5);
     const sign = Math.sign(modifier);
-    const displaySign = sign === 1 ? '+' : '-';
+    let displaySign = sign === 1 ? '+' : '-';
+    if (sign === 0) displaySign = ''
     return <Stack>
         <NumberInput label={label} defaultValue={value} />
         <Group position="center">
