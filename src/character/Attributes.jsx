@@ -1,8 +1,13 @@
 import { Header, Stack, TextInput } from "@mantine/core";
 
+function Attribute({ label }) {
+    return <TextInput label="Strength"/>
+}
+
+
 export function Attributes() {
     return <Stack aria-labelledby="attributes">
-        <TextInput label="Strength"/>
+        <Attribute label="Strength"/>
         <TextInput label="Dexterity"/>
         <TextInput label="Constitution"/>
         <TextInput label="Intelligence"/>
