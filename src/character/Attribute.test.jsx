@@ -8,4 +8,11 @@ describe('Attribute', () => {
 
         expect(screen.getByLabelText('Strength')).toHaveValue('10');
     });
+
+    it('displays the modifier from the incoming value', () => {
+        render(<Attribute label="Strength" value={12} />);
+
+        expect(screen.getByLabelText('Strength')).toHaveValue('12');
+        expect(screen.getByLabelText('Strength Modifier')).toHaveTextContent('+1');
+    });
 });
