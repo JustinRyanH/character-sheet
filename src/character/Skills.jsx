@@ -1,21 +1,19 @@
 import { Header, Stack, TextInput } from "@mantine/core";
 import React from "react";
-import { CharacterContext } from "../App.jsx";
+import { useAttribute } from "../App.jsx";
 
-function Skill({ attribute, attributes, label }) {
-    const value = attributes[attribute];
-    const modifier = Math.floor((value / 2) - 5);
+function Skill({ attribute, label }) {
+    const { modifier } = useAttribute(attribute);
 
-    return <TextInput size="xs" label="Athletics" value={modifier} onChange={() => {}} />
+    return <TextInput size="xs" label={label} value={modifier} onChange={() => {}} />
 }
 
 export function Skills() {
-    const { attributes } = React.useContext(CharacterContext);
     return <Stack aria-labelledby="skills">
         <TextInput size="xs" label="Acrobatics"/>
         <TextInput size="xs" label="Animal Handling"/>
         <TextInput size="xs" label="Arcana"/>
-        <Skill attribute="strength" attributes={attributes} size="xs" label="Athletics"/>
+        <Skill attribute="strength"  size="xs" label="Athletics"/>
         <TextInput size="xs" label="Deception"/>
         <TextInput size="xs" label="History"/>
         <TextInput size="xs" label="Insight"/>
