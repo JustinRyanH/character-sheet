@@ -20,6 +20,18 @@ export function CharacterProvider({ children }) {
     </CharacterContext.Provider>
 }
 
+export function useAttributes() {
+    const { attributes, setAttributes } = React.useContext(CharacterContext);
+    const updateAttribute = (attribute, value) => {
+        setAttributes({
+            ...attributes,
+            [attribute]: value,
+        });
+    }
+
+    return { attributes, setAttributes, updateAttribute };
+}
+
 function App() {
     return (
         <>
