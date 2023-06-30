@@ -9,32 +9,42 @@ import {
     SavingThrows
 } from "./character";
 
-function App() {
+export const CharacterContext = React.createContext({});
+
+export function CharacterProvider({ children }) {
     const [attributes, setAttributes] = React.useState({
         strength: 10,
     });
+    return <CharacterContext.Provider value={{ attributes, setAttributes }}>
+        {children}
+    </CharacterContext.Provider>
+}
+
+function App() {
     return (
         <>
-            <Stack p="2rem">
-                <CharacterHeader />
-                <Grid>
-                    <Grid.Col span={4}>
-                        <Group noWrap>
-                            <Attributes attributes={attributes} setAttributes={setAttributes} />
-                            <Stack>
-                                <TextInput label="Proficiency Bonus"/>
-                                <SavingThrows/>
-                                <Skills attributes={attributes} />
-                            </Stack>
-                        </Group>
-                    </Grid.Col>
-                    <Grid.Col span={4}>
-                        <Combat/>
-                        <Attack/>
-                    </Grid.Col>
-                    <Grid.Col span={4}></Grid.Col>
-                </Grid>
-            </Stack>
+            <CharacterProvider>
+                <Stack p="2rem">
+                    <CharacterHeader/>
+                    <Grid>
+                        <Grid.Col span={4}>
+                            <Group noWrap>
+                                <Attributes />
+                                <Stack>
+                                    <TextInput label="Proficiency Bonus"/>
+                                    <SavingThrows/>
+                                    <Skills />
+                                </Stack>
+                            </Group>
+                        </Grid.Col>
+                        <Grid.Col span={4}>
+                            <Combat/>
+                            <Attack/>
+                        </Grid.Col>
+                        <Grid.Col span={4}></Grid.Col>
+                    </Grid>
+                </Stack>
+            </CharacterProvider>
         </>
     )
 }

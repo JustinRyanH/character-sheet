@@ -1,12 +1,15 @@
+import React from 'react';
 import { Header, Stack, TextInput } from "@mantine/core";
 import { Attribute } from "./Attribute.jsx";
+import { CharacterContext } from "../App.jsx";
 
 
 // eslint-disable-next-line react/prop-types
-export function Attributes({ attributes, setAttributes }) {
+export function Attributes() {
+    const { attributes: characterAttributes, setAttributes: setCharacterAttributes } = React.useContext(CharacterContext);
     const updateAttribute = (attribute, value) => {
-        setAttributes({
-            ...attributes,
+        setCharacterAttributes({
+            ...characterAttributes,
             [attribute]: value,
         });
     }
@@ -14,7 +17,7 @@ export function Attributes({ attributes, setAttributes }) {
         <Header level={2} id="attributes">Attributes</Header>
         <Attribute
             attribute="strength"
-            value={attributes.strength || 10}
+            value={characterAttributes.strength || 10}
             label="Strength"
             setAttribute={updateAttribute}
         />
